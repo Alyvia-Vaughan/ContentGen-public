@@ -25,7 +25,9 @@ classifiers = [
 dependencies = [
     "jupyter_server>=2.4.0,<3",
     "google-generativeai",
-    "python-dotenv"
+    "python-dotenv",
+    "requests",
+    "beautifulsoup4"
 ]
 dynamic = ["version", "description", "authors", "keywords"]
 
