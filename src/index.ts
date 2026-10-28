@@ -53,7 +53,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
       const modelInfo = document.createElement('div');
       modelInfo.classList.add('notebook-name-display');
-      modelInfo.textContent = 'gemini-2.0-flash';
+      modelInfo.textContent = 'gemini-3.5-flash';
 
       // Add notebook index
       const notebookIndexDiv = document.createElement('div');
@@ -578,7 +578,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
         const apiKey = inputField.value.trim();
     
         // Basic format validation before contacting the backend
-        const apiKeyFormatIsValid = /^AIza[a-zA-Z0-9_-]{35}$/.test(apiKey);
+        const apiKeyFormatIsValid = /^(AIza|AQ\.)\S+$/.test(apiKey);
         console.log("apiKeyFormatIsValid: " + apiKeyFormatIsValid);
     
         if (!apiKeyFormatIsValid) {
