@@ -21,7 +21,7 @@ load_dotenv(dotenv_path)
 
 gemini_api_key = str(os.getenv("GEMINI_API_KEY"))
 genai.configure(api_key=gemini_api_key)
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-3.5-flash")
 
 # set up SQLite database
 db_path = os.path.join(os.path.dirname(__file__), "contentgen_logs.db")
@@ -782,7 +782,7 @@ class APIKeyCheckHandler(APIHandler):
 
         try:
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel("gemini-2.0-flash")  # Use a real model
+            model = genai.GenerativeModel("gemini-3.5-flash")  # Use a real model
             response = model.generate_content(
                 "Hello"
             )  # Minimal content generation request
@@ -811,7 +811,7 @@ class SaveApiKeyHandler(APIHandler):
             # Validate the API key first before saving
             try:
                 genai.configure(api_key=api_key)
-                model = genai.GenerativeModel("gemini-2.0-flash")
+                model = genai.GenerativeModel("gemini-3.5-flash")
                 _ = model.generate_content("Hello")  # Force real validation
                 api_key_is_valid = True
             except Exception as e:
