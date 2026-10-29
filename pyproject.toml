@@ -53,7 +53,6 @@ exclude = [".github", "binder", "*.env"]
 [tool.hatch.build.targets.wheel.shared-data]
 "contentgen/labextension" = "share/jupyter/labextensions/contentgen"
 "install.json" = "share/jupyter/labextensions/contentgen/install.json"
-"contentgen/labextension/build_log.json" = "share/jupyter/labextensions/contentgen/build_log.json"
 "jupyter-config/server-config" = "etc/jupyter/jupyter_server_config.d"
 
 [tool.hatch.build.hooks.version]
