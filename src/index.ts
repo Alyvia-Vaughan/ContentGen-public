@@ -300,7 +300,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
                   userDecision = null;
 
                   // Process response and update UI
-                  const croppedString = response.reply.substring(7, response.reply.length - 4);
+                  const croppedString = response.reply.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
                   let llmOutput;
                   try {
                     console.log("Cropped string: " + croppedString);
